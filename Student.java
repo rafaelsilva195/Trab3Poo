@@ -1,6 +1,6 @@
 package biblioteca;
 
-public class Student implements Users{
+public class Student implements IUsers{
 	
 	String name;
 	int type;
@@ -11,10 +11,10 @@ public class Student implements Users{
 	public Student(String name){
 		this.name = name;
 		this.type = 2;
-		book[0] = new Books("empyt",0);
-		book[1] = new Books("empyt",0);
-		book[2] = new Books("empyt",0);
-		book[3] = new Books("empyt",0);
+		book[0] = new Books("empyt");
+		book[1] = new Books("empyt");
+		book[2] = new Books("empyt");
+		book[3] = new Books("empyt");
 		this.suspetionDays = 0;
 		this.canEmp = true;
 	}
