@@ -6,37 +6,34 @@ import java.io.IOException;
 
 public class Books implements IBooks{
 	String name;
-	int numOfEmp;
-	boolean emprestado;
-	String user;
 	int cod;
+	int emp;
 	
 	public Books(String name){
 		this.name = name;
-		this.numOfEmp = 0;
-		this.emprestado = false;
-		this.user = "none";
+		this.emp = 1;
 		
-		
-		String buffer;
-    	BufferedReader br = null;
+		String bufferB;
+    	BufferedReader brB = null;
         try {
-        	br = new BufferedReader(new FileReader("Users.csv"));
+        	brB = new BufferedReader(new FileReader("Books.csv"));
         	int i = 0;
-            buffer = br.readLine();
+        	
+        	bufferB = brB.readLine();
             
-            while(buffer != null){
+            while(bufferB != null){
+            	System.out.println(i);
             	i++;
-            	buffer = br.readLine();
+            	bufferB = brB.readLine();
             }
             this.cod = i;
         } catch (IOException ioe) {
         	this.cod = 0;
             ioe.printStackTrace();
         } finally { // always close the file
-            if (br != null) {
+            if (brB != null) {
                 try {
-                    br.close();
+                    brB.close();
                 } catch (IOException ioe2) {
                 	
                 }
@@ -44,28 +41,26 @@ public class Books implements IBooks{
         }  
 	}
 	
+	public void setCod(int cod){
+		this.cod = cod;
+	}
+	
+	public int getCod(){
+		return cod;
+	}
+	
 	public String nameBook(){
 		return name;
 	}
-	
-	public int numOfEmp(){
-		return numOfEmp;
+	public void setEmp(int i){
+		this.emp = i;
 	}
-	
-	public void setNameBook(String name){
-		this.name = name;
-	}
-	
-	public void setNumOfEmp(int num){
-		this.numOfEmp = num;
-	}
-	
-	public void setUser(String user){
-		this.user = user;
-		this.emprestado = true;
-	}
-	
-	public String getUser(){
-		return user;
+	public boolean getEmp(){
+		if(this.emp == 1){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
