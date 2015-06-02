@@ -6,4 +6,5 @@ O trabalho foi uma implementação de uma biblioteca, ela pode cadastrar usuári
 O trabalho foi feito por:
 
 Rafael Bueno da Silva     8937271
+
 Yuri Leao                 8531682 
